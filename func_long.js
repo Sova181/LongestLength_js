@@ -17,7 +17,4 @@ function getLongestLength(str){
     return longestLength;
 } 
 
-console.log(getLongestLength('qweqrty')); // 6 (подстрока 'weqrty')
-console.log(getLongestLength('abdfehueily')); //  6 (подстрока 'dfehue')
-console.log(getLongestLength('')); //0 (пустая строка)
-console.log(getLongestLength('abcdeef')); // 5
+module.exports = getLongestLength
