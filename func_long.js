@@ -1,20 +1,19 @@
-function getLongestLength(str){
-    let longestLength = 0; 
-    let currentSubstr = '';
+function getLongestLength(str) {
+    let longestLength = 0;
+    let currentSubstring = '';
 
-    for(let i = 0; i <str.length; i++){
-        let currentSymbol = str[i]; // Текущий символ
-    let symbolIndex = currentSubstr.indexOf(currentSymbol); //индекс текущего символа в текущей подстроке
+    for (let item of str) {
+        let itemIndex = currentSubstring.indexOf(item);
 
-    if(symbolIndex === -1){
-        currentSubstr += currentSymbol; //добавляем симол в текущую подстроку
-        longestLength = Math.max(longestLength, currentSubstr.length);
-    } else { 
-       // Если символ уже встречался, начинаем новую подстроку после повторяющегося символа
-        currentSubstr = currentSubstr.slice(symbolIndex + 1) + currentSymbol;
+        if (itemIndex === -1) {
+            currentSubstring += item;
+            longestLength = Math.max(longestLength, currentSubstring.length);
+        } else {
+            currentSubstring = currentSubstring.slice(itemIndex + 1) + item;
+        }
     }
-    }
+
     return longestLength;
-} 
+}
 
 module.exports = getLongestLength
